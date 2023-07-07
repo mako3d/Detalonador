@@ -1,0 +1,982 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <tab name="Init" type="InitTab" active="false" scrollx="13" scrolly="0" scale="0.9"></tab>
+  <tab name="New Tab" type="CommonTab" active="true" scrollx="2262.1483203259722" scrolly="654.4071497450853" scale="0.9999999999999993">
+    <variables xmlns="https://developers.google.com/blockly/xml">
+      <variable id="TAmrUJ@Q34uBTxuu%9Zu">animation_playing</variable>
+      <variable id="IZD+J}S_yuC(%-7js8x0">Trava</variable>
+      <variable id="`7MOA[_q!nQo6G[8Ob0H">Animation_paused</variable>
+      <variable id="-,y?vwTeffdH$y}sr4Fq">Play_animation</variable>
+    </variables>
+    <block xmlns="https://developers.google.com/blockly/xml" type="comment" id="u@`BcH,=W7p3V+N;b7pS" x="-2570" y="-930">
+      <field name="TEXT">Fora do click mantem o som parado</field>
+      <next>
+        <block type="stopSound" id="u%b{RQ`~$NMt4nTeQY)*">
+          <value name="VALUE">
+            <block type="loadSoundAdv" id="@S+iDVEc0Of;!JbnJe]6">
+              <field name="TYPE">SOUND</field>
+              <value name="URL">
+                <shadow type="text" id="}-W]qNr*Ju?Jv(jfMH%9">
+                  <field name="TEXT">./machine.mp3</field>
+                </shadow>
+              </value>
+            </block>
+          </value>
+          <next>
+            <block type="stopSound" id="B:UlFBRgyb)eI2I~.ynS">
+              <value name="VALUE">
+                <block type="loadSoundAdv" id="K*01+4Ow--9$h32w1{Y$">
+                  <field name="TYPE">SOUND</field>
+                  <value name="URL">
+                    <shadow type="text" id="B^+6o`rGUX|-s2}3}1Xp">
+                      <field name="TEXT">./trava.wav</field>
+                    </shadow>
+                  </value>
+                </block>
+              </value>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="comment" id="b}dM`5vsjlfuq]IppLHz" x="-2570" y="-790">
+      <field name="TEXT">Inicia com animação da manivela parada</field>
+      <next>
+        <block type="variables_set" id="tq%]UK]BBEfi98z)D:4E">
+          <field name="VAR" id="TAmrUJ@Q34uBTxuu%9Zu">animation_playing</field>
+          <value name="VALUE">
+            <block type="logic_boolean" id=",NRXV=7QMFUN9t|hgn87">
+              <field name="BOOL">FALSE</field>
+            </block>
+          </value>
+        </block>
+      </next>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="comment" id="PSj|INaUL!(yX3q1r?f:" x="-2570" y="-690">
+      <field name="TEXT">CONTROLE DA TRAVA</field>
+      <next>
+        <block type="variables_set" id="K8?Ue1LzI67mYoeO`O7i">
+          <field name="VAR" id="IZD+J}S_yuC(%-7js8x0">Trava</field>
+          <value name="VALUE">
+            <block type="logic_boolean" id="DEw#.[vBO1L0+XKjp=|!">
+              <field name="BOOL">FALSE</field>
+            </block>
+          </value>
+          <next>
+            <block type="whenClicked" id="L4x%!!OC;AvEM`%#`/1B" inline="false">
+              <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false" enableifmissed="false"></mutation>
+              <field name="X_RAY">FALSE</field>
+              <field name="DOUBLE_CLICK">FALSE</field>
+              <field name="LEFT_BUTTON">TRUE</field>
+              <field name="MIDDLE_BUTTON">TRUE</field>
+              <field name="RIGHT_BUTTON">TRUE</field>
+              <value name="VALUE">
+                <shadow type="objectList" id="1hW}wF{(#);kVc%fGSC?">
+                  <field name="FIELDNAME">TRAVA</field>
+                </shadow>
+              </value>
+              <statement name="DO">
+                <block type="console.log" id="*j)lL{z+PQ)6Yys6*E^t">
+                  <value name="VALUE">
+                    <shadow type="text" id="gy5=zv7Rv$YZ9LPL;ah|">
+                      <field name="TEXT">Click</field>
+                    </shadow>
+                  </value>
+                  <next>
+                    <block type="comment" id="fa@v9GuZ(S5hT1zwTN|@">
+                      <field name="TEXT">Se a animação está tocando, execute</field>
+                      <next>
+                        <block type="controls_ifelse" id="T,P0x[9*)eD?u2A%p?BX">
+                          <value name="IF0">
+                            <block type="logic_operation" id="aTdbdAkaU!/gh}vu}5oM">
+                              <field name="OP">AND</field>
+                              <value name="A">
+                                <block type="logic_compare" id="PC5gNW0Eq8uCo11-OA5Q">
+                                  <field name="OP">EQ</field>
+                                  <value name="A">
+                                    <block type="variables_get" id="s%P%1xewg$nBiZ,:(fX%">
+                                      <field name="VAR" id="IZD+J}S_yuC(%-7js8x0">Trava</field>
+                                    </block>
+                                  </value>
+                                  <value name="B">
+                                    <block type="logic_boolean" id="CyxH[MQt%fC4T113OqZr">
+                                      <field name="BOOL">FALSE</field>
+                                    </block>
+                                  </value>
+                                </block>
+                              </value>
+                              <value name="B">
+                                <block type="logic_compare" id="E/5Jd|5rt,a|r[XOb#pY">
+                                  <field name="OP">EQ</field>
+                                  <value name="A">
+                                    <block type="variables_get" id="@!7^#z$V,L`!L:;o8=br">
+                                      <field name="VAR" id="TAmrUJ@Q34uBTxuu%9Zu">animation_playing</field>
+                                    </block>
+                                  </value>
+                                  <value name="B">
+                                    <block type="logic_boolean" id="VL(V+c)6G]0VaNpy:686">
+                                      <field name="BOOL">FALSE</field>
+                                    </block>
+                                  </value>
+                                </block>
+                              </value>
+                            </block>
+                          </value>
+                          <statement name="DO0">
+                            <block type="playAnimationAdv" id="3:pGTzU,|^nQ5FRP$i,|">
+                              <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="false"></mutation>
+                              <field name="REVERSED">FALSE</field>
+                              <field name="LOOP">LoopOnce</field>
+                              <value name="VALUE">
+                                <shadow type="animationList" id="H{A~};qa$y@D-$I}:)iz">
+                                  <field name="FIELDNAME">TRAVA</field>
+                                </shadow>
+                              </value>
+                              <value name="FROM">
+                                <shadow type="math_number" id="0bj)k;o=n8q]Q3~b.=O(">
+                                  <field name="NUM">0</field>
+                                </shadow>
+                              </value>
+                              <value name="TO">
+                                <shadow type="math_number" id="F^Hi++gC;TfU@T^hE+Zf">
+                                  <field name="NUM">30</field>
+                                </shadow>
+                              </value>
+                              <value name="SPEED">
+                                <shadow type="math_number" id=";aP.gJP.pV}^[VHSt%/$">
+                                  <field name="NUM">2</field>
+                                </shadow>
+                              </value>
+                              <next>
+                                <block type="playSound" id="X!7+a~eqCod2QcKd82-q">
+                                  <field name="LOOP">FALSE</field>
+                                  <value name="VALUE">
+                                    <block type="loadSoundAdv" id="5|](bM:tTWPar?U=FmEO">
+                                      <field name="TYPE">SOUND</field>
+                                      <value name="URL">
+                                        <shadow type="text" id="ZaO4q|dsW/ey?ZpZ.hvy">
+                                          <field name="TEXT">trava.wav</field>
+                                        </shadow>
+                                      </value>
+                                    </block>
+                                  </value>
+                                  <next>
+                                    <block type="variables_set" id="](E]seGjqm*j4NW6oA:z">
+                                      <field name="VAR" id="IZD+J}S_yuC(%-7js8x0">Trava</field>
+                                      <value name="VALUE">
+                                        <block type="logic_boolean" id="HkrSYHZ6eO1.yvdOVz@Q">
+                                          <field name="BOOL">TRUE</field>
+                                        </block>
+                                      </value>
+                                      <next>
+                                        <block type="removeAnnotation" id="W=L}0Y$q.$5-Z.CEeAd]">
+                                          <value name="TARGET">
+                                            <shadow type="objectList" id="-8b/]6n2Cxi2SS4gq#2{">
+                                              <field name="FIELDNAME">Note - Trava</field>
+                                            </shadow>
+                                          </value>
+                                        </block>
+                                      </next>
+                                    </block>
+                                  </next>
+                                </block>
+                              </next>
+                            </block>
+                          </statement>
+                          <statement name="ELSE">
+                            <block type="comment" id="%Fh^viq=TP)k_c)p.l3m">
+                              <field name="TEXT">Se a animação está parada, execute</field>
+                              <next>
+                                <block type="controls_if" id="]#=QGkpw[Z!dmug4r*ty">
+                                  <value name="IF0">
+                                    <block type="logic_operation" id="Z#b+t;^lO~t_I#M6}X;N">
+                                      <field name="OP">AND</field>
+                                      <value name="A">
+                                        <block type="logic_compare" id="c$PN*?Oe;e{5O]p25*Vz">
+                                          <field name="OP">EQ</field>
+                                          <value name="A">
+                                            <block type="variables_get" id="3)DyAlXC:rt-di{N#|}#">
+                                              <field name="VAR" id="IZD+J}S_yuC(%-7js8x0">Trava</field>
+                                            </block>
+                                          </value>
+                                          <value name="B">
+                                            <block type="logic_boolean" id="B)ETu#lh?(z+D79Nusw.">
+                                              <field name="BOOL">TRUE</field>
+                                            </block>
+                                          </value>
+                                        </block>
+                                      </value>
+                                      <value name="B">
+                                        <block type="logic_compare" id="c,*%czBmZWrGOphrPe[k">
+                                          <field name="OP">EQ</field>
+                                          <value name="A">
+                                            <block type="variables_get" id="tj}0r{-^zS+Rxy|Wd?bO">
+                                              <field name="VAR" id="TAmrUJ@Q34uBTxuu%9Zu">animation_playing</field>
+                                            </block>
+                                          </value>
+                                          <value name="B">
+                                            <block type="logic_boolean" id="jI.Rqw~|jsd|nm^?zTWs">
+                                              <field name="BOOL">FALSE</field>
+                                            </block>
+                                          </value>
+                                        </block>
+                                      </value>
+                                    </block>
+                                  </value>
+                                  <statement name="DO0">
+                                    <block type="playSound" id="$S2PRnHT%r;PfNOPz/#B">
+                                      <field name="LOOP">FALSE</field>
+                                      <value name="VALUE">
+                                        <block type="loadSoundAdv" id="iJ*G7XLDcwH`f@QdWXof">
+                                          <field name="TYPE">SOUND</field>
+                                          <value name="URL">
+                                            <shadow type="text" id="XXsf9WXOsck*tO.s7cS8">
+                                              <field name="TEXT">trava.wav</field>
+                                            </shadow>
+                                          </value>
+                                        </block>
+                                      </value>
+                                      <next>
+                                        <block type="playAnimationAdv" id="dd]!5D|Kc3b*d/FTP!w+">
+                                          <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="false"></mutation>
+                                          <field name="REVERSED">TRUE</field>
+                                          <field name="LOOP">LoopOnce</field>
+                                          <value name="VALUE">
+                                            <shadow type="animationList" id="x*M]nHL7P[?fDh}xL,!?">
+                                              <field name="FIELDNAME">TRAVA</field>
+                                            </shadow>
+                                          </value>
+                                          <value name="FROM">
+                                            <shadow type="math_number" id="W5/VdG9n..];K2z8Z_yV">
+                                              <field name="NUM">0</field>
+                                            </shadow>
+                                          </value>
+                                          <value name="TO">
+                                            <shadow type="math_number" id="]`b)j{~@W2|p2~9$oaX,">
+                                              <field name="NUM">30</field>
+                                            </shadow>
+                                          </value>
+                                          <value name="SPEED">
+                                            <shadow type="math_number" id="wQuk+2yBQFv;0W_8m~E7">
+                                              <field name="NUM">2</field>
+                                            </shadow>
+                                          </value>
+                                          <next>
+                                            <block type="variables_set" id="{w}CaA)}EJ1B9y0lZa#$">
+                                              <field name="VAR" id="IZD+J}S_yuC(%-7js8x0">Trava</field>
+                                              <value name="VALUE">
+                                                <block type="logic_boolean" id="HkEZI]MNOea6.=CZ?Wc:">
+                                                  <field name="BOOL">FALSE</field>
+                                                </block>
+                                              </value>
+                                            </block>
+                                          </next>
+                                        </block>
+                                      </next>
+                                    </block>
+                                  </statement>
+                                </block>
+                              </next>
+                            </block>
+                          </statement>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </statement>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="getAnimations" id="j7]9.jUb-7X8pq;gNa^k" x="-1350" y="-430">
+      <value name="OBJECTINPUT">
+        <shadow type="objectList" id="ijdCFGGCw.UOY/%h{ba]">
+          <field name="FIELDNAME">&lt;none&gt;</field>
+        </shadow>
+      </value>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="ssr" id="pD]ZRAlZXV~ul_wnl)H1" x="-570" y="-430">
+      <field name="TYPE">REFLECT</field>
+      <value name="MATERIAL">
+        <shadow type="materialList" id=";#vY.Re]:ON4x(;[r~EP">
+          <field name="FIELDNAME">Material.001</field>
+        </shadow>
+      </value>
+      <value name="STEPS">
+        <shadow type="number_slider" id="N*}ck{vpJ3ft#cF4:)-5">
+          <field name="NUM" min="0" max="1000" step="1">100</field>
+        </shadow>
+      </value>
+      <value name="STRIDE">
+        <shadow type="number_slider" id="oh6{u3Ibh}mDPn)@^(b?">
+          <field name="NUM" min="0" max="10" step="0.1">5</field>
+        </shadow>
+      </value>
+      <value name="BINARY_SEARCH_STEPS">
+        <shadow type="number_slider" id="AC|)}1Bdh+kk$w;9;D!W">
+          <field name="NUM" min="0" max="10" step="0.1">4</field>
+        </shadow>
+      </value>
+      <value name="THICKNESS">
+        <shadow type="number_slider" id="a$3U?{#c=7l[KgE@%=(%">
+          <field name="NUM" min="0" max="0.1" step="0.01">0.01</field>
+        </shadow>
+      </value>
+      <value name="MAX_DISTANCE">
+        <shadow type="number_slider" id="MJJ63FQ:W7T-T1~guC$l">
+          <field name="NUM" min="0" max="1000" step="1">100</field>
+        </shadow>
+      </value>
+      <value name="RESOLUTION">
+        <shadow type="number_slider" id="BFIr^9y#{e6]0j=G+KJw">
+          <field name="NUM" min="0" max="10" step="0.1">0.5</field>
+        </shadow>
+      </value>
+      <value name="JITTER">
+        <shadow type="number_slider" id="X(3Xk9+xsrfk@t~T#yXU">
+          <field name="NUM" min="0" max="10" step="0.1">1</field>
+        </shadow>
+      </value>
+      <value name="RENDER_AFTER">
+        <shadow type="objectList" id="ZM3?7.k[3j$SR*n^@=Qn">
+          <field name="FIELDNAME">&lt;none&gt;</field>
+        </shadow>
+      </value>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="addAnnotation" id="a~+SN+_/~=ii!ku2O8zG" x="-570" y="-130">
+      <mutation xmlns="http://www.w3.org/1999/xhtml" usenameslot="false"></mutation>
+      <value name="ANNOTATION">
+        <shadow type="text" id="6B{)KDw*?]n-Kon7)15d">
+          <field name="TEXT">1</field>
+        </shadow>
+      </value>
+      <value name="TARGET">
+        <shadow type="objectList" id=",$L*}Y!sR9_/70wVoOll">
+          <field name="FIELDNAME">Note 1</field>
+        </shadow>
+      </value>
+      <value name="CONTENTS">
+        <shadow type="text" id="-k_4;C.ZUcFR4b_F!C5K">
+          <field name="TEXT">Controle de Direção</field>
+        </shadow>
+      </value>
+      <value name="ID">
+        <shadow type="text" id="Y,Q8uz/;Hjy22GBKb3h@">
+          <field name="TEXT">poi1</field>
+        </shadow>
+      </value>
+      <next>
+        <block type="addAnnotation" id="|Bg$r][yg5WX6aVxz]V0">
+          <mutation xmlns="http://www.w3.org/1999/xhtml" usenameslot="false"></mutation>
+          <value name="ANNOTATION">
+            <shadow type="text" id="~:IJ2.|6cJh87inYXlcO">
+              <field name="TEXT">2</field>
+            </shadow>
+          </value>
+          <value name="TARGET">
+            <shadow type="objectList" id="sQwHsgB5ClwnQJYk+f|`">
+              <field name="FIELDNAME">Note 2</field>
+            </shadow>
+          </value>
+          <value name="CONTENTS">
+            <shadow type="text" id="44ArRr|G|t?$AiZwVj#w">
+              <field name="TEXT">Trava de Segurança</field>
+            </shadow>
+          </value>
+          <value name="ID">
+            <shadow type="text" id="+nhe/Wd;}WGw/:c_~J`Y">
+              <field name="TEXT">poi2</field>
+            </shadow>
+          </value>
+          <next>
+            <block type="addAnnotation" id="#3ns|/5Ke)G|V$zGkCKY">
+              <mutation xmlns="http://www.w3.org/1999/xhtml" usenameslot="false"></mutation>
+              <value name="ANNOTATION">
+                <shadow type="text" id="?RsZ.?@@+*xwlJfAQ24Z">
+                  <field name="TEXT">3</field>
+                </shadow>
+              </value>
+              <value name="TARGET">
+                <shadow type="objectList" id="B**f;sUZS2R10hS5o1m.">
+                  <field name="FIELDNAME">Note 3</field>
+                </shadow>
+              </value>
+              <value name="CONTENTS">
+                <shadow type="text" id=",,o)*#p~=(1[-f72*z2e">
+                  <field name="TEXT">Manivela de Rotação</field>
+                </shadow>
+              </value>
+              <value name="ID">
+                <shadow type="text" id="Jt6S26{dbht+-y#uwnl2">
+                  <field name="TEXT">poi3</field>
+                </shadow>
+              </value>
+              <next>
+                <block type="addAnnotation" id="J4AX0*{4KT:L^Q?Q#hm#">
+                  <mutation xmlns="http://www.w3.org/1999/xhtml" usenameslot="false"></mutation>
+                  <value name="ANNOTATION">
+                    <shadow type="text" id="wtwAE`A#H?OVt.g;6!4r">
+                      <field name="TEXT">4</field>
+                    </shadow>
+                  </value>
+                  <value name="TARGET">
+                    <shadow type="objectList" id="22Z}U%:+yMg8FpZ!*JA-">
+                      <field name="FIELDNAME">Note 4</field>
+                    </shadow>
+                  </value>
+                  <value name="CONTENTS">
+                    <shadow type="text" id="1Y`~%PNi*aOnf~nBvm6X">
+                      <field name="TEXT">Controle de Rotação</field>
+                    </shadow>
+                  </value>
+                  <value name="ID">
+                    <shadow type="text" id="A-gJ/m/^XmNl-O44#s=A">
+                      <field name="TEXT">poi4</field>
+                    </shadow>
+                  </value>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="comment" id="D*S^c2XE_bXBUeq][:#Y" x="-1810" y="-10">
+      <field name="TEXT">Botao para abrir o link do youtube</field>
+      <next>
+        <block type="whenClicked" id="6ys7k{~A_$v[wN5DqDZS" inline="false">
+          <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false" enableifmissed="false"></mutation>
+          <field name="X_RAY">FALSE</field>
+          <field name="DOUBLE_CLICK">FALSE</field>
+          <field name="LEFT_BUTTON">TRUE</field>
+          <field name="MIDDLE_BUTTON">TRUE</field>
+          <field name="RIGHT_BUTTON">TRUE</field>
+          <value name="VALUE">
+            <shadow type="objectList" id="=.Cx4cNci[A3R/+t(hs=">
+              <field name="FIELDNAME">Btn_youtube</field>
+            </shadow>
+          </value>
+          <statement name="DO">
+            <block type="playAnimationAdv" id="vN!.3@Z${GqUjtEUyhO%">
+              <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="false"></mutation>
+              <field name="REVERSED">FALSE</field>
+              <field name="LOOP">LoopOnce</field>
+              <value name="VALUE">
+                <shadow type="animationList" id="1+tlA6U+~tW?nM,{|4wt">
+                  <field name="FIELDNAME">Btn_youtube</field>
+                </shadow>
+              </value>
+              <value name="FROM">
+                <shadow type="math_number" id="3m`K#1XTrs]51(Zass.v">
+                  <field name="NUM">0</field>
+                </shadow>
+              </value>
+              <value name="TO">
+                <shadow type="math_number" id="okl1`!T8I|7E3utjB48?">
+                  <field name="NUM">10</field>
+                </shadow>
+              </value>
+              <value name="SPEED">
+                <shadow type="math_number" id=";tPG-%T(dm}E:i,v@Vt}">
+                  <field name="NUM">2</field>
+                </shadow>
+              </value>
+              <next>
+                <block type="setTimeout" id="ON=aC~~W5fRHsbek#=*-">
+                  <value name="VALUE">
+                    <shadow type="math_number" id="h_-4}$nIOW%1|oWJ(qL$">
+                      <field name="NUM">1</field>
+                    </shadow>
+                  </value>
+                  <statement name="DO">
+                    <block type="openWebPage" id="tbHKyJz6_f$o5:{jH%s6">
+                      <field name="MODE">NEW</field>
+                      <value name="URL">
+                        <shadow type="text" id="i]nc`~9rZ2${6,1Ie{4-">
+                          <field name="TEXT">https://www.youtube.com/watch?v=MJS01-qcvjQ</field>
+                        </shadow>
+                      </value>
+                    </block>
+                  </statement>
+                </block>
+              </next>
+            </block>
+          </statement>
+        </block>
+      </next>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="comment" id="f?vZ?@=:UonAu)_osP2N" x="-2570" y="30">
+      <field name="TEXT">CONTROLE DA MANIVELA</field>
+      <next>
+        <block type="whenClicked" id="@L]^=%u{sJS5A]K5tgcs" inline="false">
+          <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false" enableifmissed="false"></mutation>
+          <field name="X_RAY">FALSE</field>
+          <field name="DOUBLE_CLICK">FALSE</field>
+          <field name="LEFT_BUTTON">TRUE</field>
+          <field name="MIDDLE_BUTTON">TRUE</field>
+          <field name="RIGHT_BUTTON">TRUE</field>
+          <value name="VALUE">
+            <shadow type="objectList" id="Ks%h,[FF/58O/O4cuQ$h">
+              <field name="FIELDNAME">200.002</field>
+            </shadow>
+          </value>
+          <statement name="DO">
+            <block type="comment" id="r0MR~{do1)en+9K0ip$#">
+              <field name="TEXT">Se a trava está liberada execute</field>
+              <next>
+                <block type="controls_ifelse" id="Pn2tx;sxYEHph4h9Eu6[">
+                  <value name="IF0">
+                    <block type="logic_compare" id="G$=7Dd.|*n~+anfk4dNk">
+                      <field name="OP">EQ</field>
+                      <value name="A">
+                        <block type="variables_get" id="62_E1//CrBa=R^m96Dl3">
+                          <field name="VAR" id="IZD+J}S_yuC(%-7js8x0">Trava</field>
+                        </block>
+                      </value>
+                      <value name="B">
+                        <block type="logic_boolean" id="e+%^,[B;Oe3:hb%9O,Cf">
+                          <field name="BOOL">TRUE</field>
+                        </block>
+                      </value>
+                    </block>
+                  </value>
+                  <statement name="DO0">
+                    <block type="comment" id="P#0|.V4dr{Q|Dt.YLKi[">
+                      <field name="TEXT">Se a animação está rodando execute</field>
+                      <next>
+                        <block type="controls_ifelse" id="+BhOcdE7OL3s~|nI=LC}">
+                          <value name="IF0">
+                            <block type="isAnimationPlaying" id=")a)b9X^I/7yy9lyX(;.L">
+                              <value name="VALUE">
+                                <shadow type="animationList" id="Zli%3SrEg{_ODe5+rhc^">
+                                  <field name="FIELDNAME">200.002</field>
+                                </shadow>
+                              </value>
+                            </block>
+                          </value>
+                          <statement name="DO0">
+                            <block type="pauseAnimation" id="7i]S8Z%[/7=C_doZR,*4">
+                              <value name="VALUE">
+                                <shadow type="animationList" id="6^1}U!f./X)RQO8z7*.M">
+                                  <field name="FIELDNAME">200.002</field>
+                                </shadow>
+                              </value>
+                              <next>
+                                <block type="stopSound" id="N:kZgGW5u/;~:%+I*p{H">
+                                  <value name="VALUE">
+                                    <block type="loadSoundAdv" id="8)l3sQ=Rb{^Ut3_3PVh0">
+                                      <field name="TYPE">SOUND</field>
+                                      <value name="URL">
+                                        <shadow type="text" id=".uH3[*^1omr@x!J6.!aj">
+                                          <field name="TEXT">./machine.mp3</field>
+                                        </shadow>
+                                      </value>
+                                    </block>
+                                  </value>
+                                  <next>
+                                    <block type="variables_set" id="5V_/]?Wn!oStTfab[`+p">
+                                      <field name="VAR" id="`7MOA[_q!nQo6G[8Ob0H">Animation_paused</field>
+                                      <value name="VALUE">
+                                        <block type="logic_boolean" id="skjR])Thl3J0,MKZ*!ZV">
+                                          <field name="BOOL">TRUE</field>
+                                        </block>
+                                      </value>
+                                      <next>
+                                        <block type="variables_set" id="=D[]l%A%V1vJ*eAKM7/A">
+                                          <field name="VAR" id="-,y?vwTeffdH$y}sr4Fq">Play_animation</field>
+                                          <value name="VALUE">
+                                            <block type="logic_boolean" id="|dC6/EYx$+h4bzP76ZmE">
+                                              <field name="BOOL">FALSE</field>
+                                            </block>
+                                          </value>
+                                          <next>
+                                            <block type="variables_set" id="nG~0sUZfs9D.I!U$/z7Q">
+                                              <field name="VAR" id="TAmrUJ@Q34uBTxuu%9Zu">animation_playing</field>
+                                              <value name="VALUE">
+                                                <block type="logic_boolean" id="(u=F]XAm!*V|V6Gs,A~b">
+                                                  <field name="BOOL">FALSE</field>
+                                                </block>
+                                              </value>
+                                            </block>
+                                          </next>
+                                        </block>
+                                      </next>
+                                    </block>
+                                  </next>
+                                </block>
+                              </next>
+                            </block>
+                          </statement>
+                          <statement name="ELSE">
+                            <block type="comment" id="{jwiYBc{?o9f{7{j9y9d">
+                              <field name="TEXT">Se a animação está pausada, execute</field>
+                              <next>
+                                <block type="controls_ifelse" id="?+O+St:^8~R~Jjb?H~Xt">
+                                  <value name="IF0">
+                                    <block type="logic_compare" id="b|Kvs1+@k,2Bt!4JnNLg">
+                                      <field name="OP">EQ</field>
+                                      <value name="A">
+                                        <block type="variables_get" id="#!TCYJM7}65tDhTduy55">
+                                          <field name="VAR" id="`7MOA[_q!nQo6G[8Ob0H">Animation_paused</field>
+                                        </block>
+                                      </value>
+                                      <value name="B">
+                                        <block type="logic_boolean" id="Pm=#VN%S8?hg?%9TgvCT">
+                                          <field name="BOOL">TRUE</field>
+                                        </block>
+                                      </value>
+                                    </block>
+                                  </value>
+                                  <statement name="DO0">
+                                    <block type="resumeAnimation" id="b^#AS6a/r1#`HeGWsg%g">
+                                      <value name="VALUE">
+                                        <shadow type="animationList" id="kEzRZL4k,kbS+Up6nUMd">
+                                          <field name="FIELDNAME">200.002</field>
+                                        </shadow>
+                                      </value>
+                                      <next>
+                                        <block type="playSound" id="+5eL@tj]eSL=56_|65d6">
+                                          <field name="LOOP">TRUE</field>
+                                          <value name="VALUE">
+                                            <block type="loadSoundAdv" id="1-!a@f=Z?qF_Ay]bEZVc">
+                                              <field name="TYPE">SOUND</field>
+                                              <value name="URL">
+                                                <shadow type="text" id="A%;Xbs8I(MOc@K5I#iSQ">
+                                                  <field name="TEXT">./machine.mp3</field>
+                                                </shadow>
+                                              </value>
+                                            </block>
+                                          </value>
+                                          <next>
+                                            <block type="variables_set" id="p^.Y|eg?Eg^=Vvv)u43Z">
+                                              <field name="VAR" id="-,y?vwTeffdH$y}sr4Fq">Play_animation</field>
+                                              <value name="VALUE">
+                                                <block type="logic_boolean" id=",hR_I/ub#5oAO2[9M(xQ">
+                                                  <field name="BOOL">TRUE</field>
+                                                </block>
+                                              </value>
+                                              <next>
+                                                <block type="variables_set" id=".a1EALS%j~c%quA$U`j#">
+                                                  <field name="VAR" id="`7MOA[_q!nQo6G[8Ob0H">Animation_paused</field>
+                                                  <value name="VALUE">
+                                                    <block type="logic_boolean" id=",?13}qwH92Ry):8ARf~g">
+                                                      <field name="BOOL">FALSE</field>
+                                                    </block>
+                                                  </value>
+                                                </block>
+                                              </next>
+                                            </block>
+                                          </next>
+                                        </block>
+                                      </next>
+                                    </block>
+                                  </statement>
+                                  <statement name="ELSE">
+                                    <block type="comment" id="UG^^qZV[Viy7%aQ*%.Kh">
+                                      <field name="TEXT">Se a animação está parada, execute</field>
+                                      <next>
+                                        <block type="variables_set" id="1_6R0kvWe6O86*%QUa}-">
+                                          <field name="VAR" id="TAmrUJ@Q34uBTxuu%9Zu">animation_playing</field>
+                                          <value name="VALUE">
+                                            <block type="logic_boolean" id="Nz/nWu1$8/68;)v-HLpY">
+                                              <field name="BOOL">TRUE</field>
+                                            </block>
+                                          </value>
+                                          <next>
+                                            <block type="playAnimationAdv" id="*)dGP?]j85v[B@.D_uqK">
+                                              <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="false"></mutation>
+                                              <field name="REVERSED">FALSE</field>
+                                              <field name="LOOP">LoopRepeat</field>
+                                              <value name="VALUE">
+                                                <shadow type="animationList" id="W!g-z@}CUiVC.4zEMEv/">
+                                                  <field name="FIELDNAME">200.002</field>
+                                                </shadow>
+                                              </value>
+                                              <value name="FROM">
+                                                <shadow type="math_number" id="Wpf)YzP!9@X?~a0!?9Su">
+                                                  <field name="NUM">0</field>
+                                                </shadow>
+                                              </value>
+                                              <value name="TO">
+                                                <shadow type="math_number" id="AaIXv^?6-(|9kz~JVf5D">
+                                                  <field name="NUM">240</field>
+                                                </shadow>
+                                              </value>
+                                              <value name="SPEED">
+                                                <shadow type="math_number" id="pY.la0b?]`S=4-}aXGZ!">
+                                                  <field name="NUM">2</field>
+                                                </shadow>
+                                              </value>
+                                              <next>
+                                                <block type="playSound" id="}Hx:K?bqDgq$wAZN[C,:">
+                                                  <field name="LOOP">TRUE</field>
+                                                  <value name="VALUE">
+                                                    <block type="loadSoundAdv" id="$@dUqFHY$oun(}zw2k{*">
+                                                      <field name="TYPE">SOUND</field>
+                                                      <value name="URL">
+                                                        <shadow type="text" id="EzBP@]3,XZi^YXrkH=`?">
+                                                          <field name="TEXT">./machine.mp3</field>
+                                                        </shadow>
+                                                      </value>
+                                                    </block>
+                                                  </value>
+                                                  <next>
+                                                    <block type="variables_set" id="?pQ#uL;2+P*]yQNaY@iM">
+                                                      <field name="VAR" id="-,y?vwTeffdH$y}sr4Fq">Play_animation</field>
+                                                      <value name="VALUE">
+                                                        <block type="logic_boolean" id="{Z3XTDB/NwbJsvD_|bV}">
+                                                          <field name="BOOL">TRUE</field>
+                                                        </block>
+                                                      </value>
+                                                    </block>
+                                                  </next>
+                                                </block>
+                                              </next>
+                                            </block>
+                                          </next>
+                                        </block>
+                                      </next>
+                                    </block>
+                                  </statement>
+                                </block>
+                              </next>
+                            </block>
+                          </statement>
+                        </block>
+                      </next>
+                    </block>
+                  </statement>
+                  <statement name="ELSE">
+                    <block type="addAnnotation" id="Ebq[AME?-c4^K3BDmHgm">
+                      <mutation xmlns="http://www.w3.org/1999/xhtml" usenameslot="false"></mutation>
+                      <value name="ANNOTATION">
+                        <shadow type="text" id="xIO;+$=%9@yg4^nbu_;;">
+                          <field name="TEXT">TRAVA ATIVADA</field>
+                        </shadow>
+                      </value>
+                      <value name="TARGET">
+                        <shadow type="objectList" id="TKg_[f@h8$0AL46-xNL}">
+                          <field name="FIELDNAME">Note - Trava</field>
+                        </shadow>
+                      </value>
+                      <value name="CONTENTS">
+                        <shadow type="text" id="~WQb34bNQWdv@`txxc;|">
+                          <field name="TEXT">DESTRAVE PARA LIBERAR</field>
+                        </shadow>
+                      </value>
+                      <value name="ID">
+                        <shadow type="text" id="cU6tBRYTd}Oe0XkPP8dS">
+                          <field name="TEXT">poi5</field>
+                        </shadow>
+                      </value>
+                    </block>
+                  </statement>
+                </block>
+              </next>
+            </block>
+          </statement>
+        </block>
+      </next>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="comment" id="$RC|q[n#=`yo3{%AQmaf" x="-570" y="50">
+      <field name="TEXT">Cria o outline para o objeto manivela</field>
+      <next>
+        <block type="whenHovered" id="W04ybZMBrSE1RLr5_-;4" inline="false">
+          <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false"></mutation>
+          <field name="X_RAY">FALSE</field>
+          <value name="VALUE">
+            <block type="objectList" id="k[rP@7D{tqLr62hgO`nL">
+              <field name="FIELDNAME">200.002</field>
+            </block>
+          </value>
+          <statement name="DO_OVER">
+            <block type="setHTMLElemStyle" id="f5.+_AQ`C+r~HTac#5R9">
+              <field name="PROPERTY">cursor</field>
+              <field name="PARENT">FALSE</field>
+              <value name="VALUE">
+                <block type="text" id="YRM.l9{B!]Oty#kFza{0">
+                  <field name="TEXT">pointer</field>
+                </block>
+              </value>
+              <value name="ID">
+                <block type="DOMObjectSelector" id="?3:!oPbUjX~smP_Tu7*x">
+                  <field name="DOM_OBJECT">BODY</field>
+                </block>
+              </value>
+              <next>
+                <block type="outline" id="xGgrZ`zTMJsO`osISz8f">
+                  <field name="DO_WHAT">ENABLE</field>
+                  <value name="TARGET">
+                    <shadow type="objectList" id="-qpum;,IQ.euhmy.vXte">
+                      <field name="FIELDNAME">200.002</field>
+                    </shadow>
+                  </value>
+                </block>
+              </next>
+            </block>
+          </statement>
+          <statement name="DO_OUT">
+            <block type="setHTMLElemStyle" id="OTeovdusa+6*SFbO?a#l">
+              <field name="PROPERTY">cursor</field>
+              <field name="PARENT">FALSE</field>
+              <value name="VALUE">
+                <block type="text" id="0=Mj-Y1r]CDMYA{=d{R`">
+                  <field name="TEXT">default</field>
+                </block>
+              </value>
+              <value name="ID">
+                <block type="DOMObjectSelector" id="(]gk)m3(*quxl2pHLXY,">
+                  <field name="DOM_OBJECT">BODY</field>
+                </block>
+              </value>
+              <next>
+                <block type="outline" id="P|ZZIT4MukS9x/CXooL6">
+                  <field name="DO_WHAT">DISABLE</field>
+                  <value name="TARGET">
+                    <shadow type="objectList" id="_PEiXN}1sT2Zj@%0wS!-">
+                      <field name="FIELDNAME">200.002</field>
+                    </shadow>
+                  </value>
+                </block>
+              </next>
+            </block>
+          </statement>
+        </block>
+      </next>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="comment" id="}/P@UBRA7@_L5)Mi+V,r" x="-570" y="290">
+      <field name="TEXT">Cria o outline para o objeto trava</field>
+      <next>
+        <block type="whenHovered" id="ax|!F/cJEyaK@[[$gt8!" inline="false">
+          <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false"></mutation>
+          <field name="X_RAY">FALSE</field>
+          <value name="VALUE">
+            <block type="objectList" id="zTSC|::biIkSq.n]KT!X">
+              <field name="FIELDNAME">TRAVA</field>
+            </block>
+          </value>
+          <statement name="DO_OVER">
+            <block type="setHTMLElemStyle" id="Ya#9al)3UC1D1$A-yh0E">
+              <field name="PROPERTY">cursor</field>
+              <field name="PARENT">FALSE</field>
+              <value name="VALUE">
+                <block type="text" id="fF#s|ozOZau{n{q;{#l[">
+                  <field name="TEXT">pointer</field>
+                </block>
+              </value>
+              <value name="ID">
+                <block type="DOMObjectSelector" id="GdpCGhZ-VYsB*0IN4B+{">
+                  <field name="DOM_OBJECT">BODY</field>
+                </block>
+              </value>
+              <next>
+                <block type="outline" id="Ld,e[jB|36OI*@+cv,#K">
+                  <field name="DO_WHAT">ENABLE</field>
+                  <value name="TARGET">
+                    <shadow type="objectList" id="|vfHF1hUXN*@G7hY/0C_">
+                      <field name="FIELDNAME">TRAVA</field>
+                    </shadow>
+                  </value>
+                </block>
+              </next>
+            </block>
+          </statement>
+          <statement name="DO_OUT">
+            <block type="setHTMLElemStyle" id="x-4vT7`0o(ips*Kvl_NL">
+              <field name="PROPERTY">cursor</field>
+              <field name="PARENT">FALSE</field>
+              <value name="VALUE">
+                <block type="text" id="vTER+U7f(G9=P?iel6x~">
+                  <field name="TEXT">default</field>
+                </block>
+              </value>
+              <value name="ID">
+                <block type="DOMObjectSelector" id="^15A6eWTbp`ZvT:|5dBC">
+                  <field name="DOM_OBJECT">BODY</field>
+                </block>
+              </value>
+              <next>
+                <block type="outline" id="(3D?4/|!DrAUY~NEof{J">
+                  <field name="DO_WHAT">DISABLE</field>
+                  <value name="TARGET">
+                    <shadow type="objectList" id="Yrd9`1xX%ONOk2Pk*F)5">
+                      <field name="FIELDNAME">TRAVA</field>
+                    </shadow>
+                  </value>
+                </block>
+              </next>
+            </block>
+          </statement>
+        </block>
+      </next>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="comment" id="p|^Bg5]9E,O$~bpw@.+a" x="-570" y="530">
+      <field name="TEXT">Cria o outline para o objeto botao do youtube</field>
+      <next>
+        <block type="whenHovered" id="@9w-%:2L;BX3tI`6L:C~" inline="false">
+          <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false"></mutation>
+          <field name="X_RAY">FALSE</field>
+          <value name="VALUE">
+            <block type="objectList" id="P!Ly|y*AQ!w*(ore/KHW">
+              <field name="FIELDNAME">Btn_youtube</field>
+            </block>
+          </value>
+          <statement name="DO_OVER">
+            <block type="setHTMLElemStyle" id="UekNSOCifpDQ,D$N%.F0">
+              <field name="PROPERTY">cursor</field>
+              <field name="PARENT">FALSE</field>
+              <value name="VALUE">
+                <block type="text" id="I=9h1*(qfiYT,QHwGpC2">
+                  <field name="TEXT">pointer</field>
+                </block>
+              </value>
+              <value name="ID">
+                <block type="DOMObjectSelector" id=");pdis@9~.$GM2$;NgUk">
+                  <field name="DOM_OBJECT">BODY</field>
+                </block>
+              </value>
+              <next>
+                <block type="outline" id="_kmWvy#=XYIzFKRP17}U">
+                  <field name="DO_WHAT">ENABLE</field>
+                  <value name="TARGET">
+                    <shadow type="objectList" id="`TIf)|8#K6eg@ZbB8)Ny">
+                      <field name="FIELDNAME">Btn_youtube</field>
+                    </shadow>
+                  </value>
+                </block>
+              </next>
+            </block>
+          </statement>
+          <statement name="DO_OUT">
+            <block type="setHTMLElemStyle" id="2|^Ny2SNsRQ[O@dC|B#u">
+              <field name="PROPERTY">cursor</field>
+              <field name="PARENT">FALSE</field>
+              <value name="VALUE">
+                <block type="text" id="uFY(;_lEP,y]r3xT7;RM">
+                  <field name="TEXT">default</field>
+                </block>
+              </value>
+              <value name="ID">
+                <block type="DOMObjectSelector" id="I?X9K%n]2B_#`buRGHaV">
+                  <field name="DOM_OBJECT">BODY</field>
+                </block>
+              </value>
+              <next>
+                <block type="outline" id="XoeKNH|S_Fw(2x+${Vf]">
+                  <field name="DO_WHAT">DISABLE</field>
+                  <value name="TARGET">
+                    <shadow type="objectList" id="WNxaKz(G#Lrp:f*.MmtM">
+                      <field name="FIELDNAME">Btn_youtube</field>
+                    </shadow>
+                  </value>
+                </block>
+              </next>
+            </block>
+          </statement>
+        </block>
+      </next>
+    </block>
+  </tab>
+  <editorsettings viewport-x="1100" viewport-y="31" viewport-w="747" viewport-h="479.5" viewport-hidden="true" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
+</xml>
